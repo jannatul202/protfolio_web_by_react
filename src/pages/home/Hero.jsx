@@ -68,7 +68,7 @@ const Hero = () => {
         <div className='md:w-1/3 z-20 my-20 md:ml-30 pt-5 relative'>
             <img src={profile} 
             alt="profile image" 
-            className='max-w-[200] rounded-4xl border-2 border-primary'/>
+            className='rounded-4xl border-2 border-primary'/>
             <motion.div 
             initial={floatingNameTagAnimation.initial}
             animate={floatingNameTagAnimation.animate}
