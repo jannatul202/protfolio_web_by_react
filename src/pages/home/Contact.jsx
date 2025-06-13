@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IoLocationSharp } from "react-icons/io5";
 import { FaEnvelope } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -8,10 +8,18 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";    
 import SectionHeading from '../../components/SectionHeading';
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
+
+  useEffect(() => {
+            AOS.init();
+    }, [])
+
   return (
-    <section className='bg-bg-gray'>
+    <section className='bg-bg-gray' id="contact">
       <div className='section-container'>
         {/* headding */}
         <SectionHeading title="Get in Touch" 
@@ -19,7 +27,9 @@ const Contact = () => {
         {/* contact form main */}
         <div className='grid md:grid-cols-3 sm:grid-cols-2 gap-10  py-20'>
           {/* left content */}
-          <div className='p-10 shadow-xl shadow-primary/8 bg-white rounded-lg'>
+          <div className='p-10 shadow-xl shadow-primary/8 bg-white rounded-lg'
+          data-aos="fade-up"
+          data-aos-duration="1200">
             <div className='group'>
                 <span className=' bg-primary/20 p-2 inline-block rounded-lg group-hover:bg-primary group-hover:-translate-y-1.5 transition ease-in-out
                 duration-200 group-hover:text-white text-primary '>
@@ -67,7 +77,9 @@ const Contact = () => {
             </div>
           </div>
           {/* roght content */}
-          <div className='md:col-span-2 shadow-xl shadow-primary/8 bg-white rounded-lg p-10 '>
+          <div className='md:col-span-2 shadow-xl shadow-primary/8 bg-white rounded-lg p-10 '
+          data-aos="fade-up"
+          data-aos-duration="1200">
             <form>
               <div className='mb-5 rounded-lg'>
                 <input type="text" placeholder='Your Name' 

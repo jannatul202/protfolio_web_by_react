@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaCheckCircle } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi2";  
 import { FaAward } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const CounterCard = () => {
+
+    useEffect(() => {
+              AOS.init();
+      }, [])
 
 const cards =[
     {
@@ -38,7 +45,11 @@ const cards =[
             {/* card main */}
             {
                 cards.map((card, index)=>(  
-                <div key={index} className='text-center border-2 border-primary p-8
+                <div 
+                key={index} 
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className='text-center border-2 border-primary p-8
                 rounded-2xl group hover:-translate-y-4 transition-transform duration-300 hover:bg-primary
                 text-primary hover:text-white'>
                     <div className='text-center mx-auto p-3 bg-primary/15 rounded-full inline-block

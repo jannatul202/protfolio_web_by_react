@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router'
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Footer = () => {
+
+  useEffect(() => {
+            AOS.init();
+    }, [])
+
   return (
     <footer className='bg-gray-50 text-black dark:bg-gray-800 dark:text-white
     pt-15 pb-5'>
-      <div className='section-container grid grid-cols-1 sm:grid-col-2 md:grid-cols-5 gap-8 px-8'>
+      <div className='section-container grid grid-cols-1 sm:grid-col-2 md:grid-cols-5 gap-8 px-8'
+      data-aos="fade-up"
+      data-aos-duration="1200">
         {/* logo and details */}
         <div className='md:col-span-2'>
           <h2 className='font-bold text-2xl'><Link to="/">Logo Here</Link></h2>

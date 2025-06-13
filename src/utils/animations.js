@@ -53,17 +53,14 @@ export const fadeUpDown = {
 export const floatingNameTagAnimation = {
     initial: {
         x: -20,
-        opacity: 0,
-        rotate: -10
+        opacity: 0
     },
     animate: {
         x: 0,
         opacity: 1,
-        rotate: -10,
-        y: [0, -10, 0, 10, 0],
+        y: [0, -10, 0, 10, 0]
     },
     transition: {
-        x: { duration: 0.5, delay: 0.3 },
         y: { 
             duration: 3, 
             repeat: Infinity, 
@@ -79,24 +76,20 @@ export const floatingNameTagAnimation = {
 export const fbgAnimation = {
     initial: {
         x: -20,
-        opacity: 0,
-        rotate: -10
+        opacity: 0
     },
     animate: {
         x: 0,
         opacity: 1,
-        rotate: -10,
-        y: [0, -10, 0, 10, 0],
+        y: [0, 10, 0, -10, 10],
     },
     transition: {
-        x: { duration: 0.5, delay: 0.3 },
         y: { 
             duration: 3, 
             repeat: Infinity, 
             ease: "easeInOut",
             repeatType: "reverse"
         },
-        rotate: { duration: 0.5 }
     }
 }
 

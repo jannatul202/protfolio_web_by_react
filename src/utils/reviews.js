@@ -13,7 +13,7 @@ import testimonialBG3 from '../assets/testimonial1.png'
 export  const reviews = [
         {
             name: 'John Doe',
-            review: 'Working with this designer was an absolute pleasure. Their attention to detail and creative solutions exceeded our expectations.',
+            review: 'Working with this designer was an absolute pleasure. Their attention to detail and creative solutions.',
             image: reviewer1,
             coverImg: testimonialBG1,
             rating: 4,
@@ -33,22 +33,22 @@ export  const reviews = [
             rating: 4,
         },
         {
-            name: 'Michael Brown',
-            review: 'Working with this designer was an absolute pleasure. Their attention to detail and creative solutions exceeded our expectations.',
+            name: 'John Doe',
+            review: 'Working with this designer was an absolute pleasure. Their attention to detail and creative solutions.',
             image: reviewer1,
             coverImg: testimonialBG1,
             rating: 3,
         },
         {
-            name: 'Michael Brown',
-            review: 'Working with this designer was an absolute pleasure. Their attention to detail and creative solutions exceeded our expectations.!',
+            name: 'Jane Smith',
+            review: 'Working with this designer was an absolute pleasure. Their attention to detail and creative solutions!',
             image: reviewer2,
             coverImg: testimonialBG2,
             rating: 5,
         },
         {
             name: 'Michael Brown',
-            review: 'Working with this designer was an absolute pleasure. Their attention to detail and creative solutions exceeded our expectations.',
+            review: 'Working with this designer was an absolute pleasure. Their attention to detail and creative solutions.',
             image: reviewer3,
             coverImg: testimonialBG3,
             rating: 4,

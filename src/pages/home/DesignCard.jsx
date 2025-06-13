@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaLightbulb } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";     
 import { FaPalette } from "react-icons/fa";
 import { FaRocket } from "react-icons/fa6";         
 import SectionHeading from '../../components/SectionHeading';
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const DesignCard = () => {
+
+    useEffect(() => {
+              AOS.init();
+      }, [])
+
+
     const cardsDesign =[
         {
             icon:<FaLightbulb />,
@@ -38,7 +47,11 @@ const DesignCard = () => {
             <div className='grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 mt-20 gap-6'>
                 {
                 cardsDesign.map((card , index)=>(
-                    <div key={index} className='bg-white shadow-md px-5 py-8 rounded-2xl group hover:border-2 hover:border-primary 
+                    <div 
+                    key={index}
+                    data-aos="fade-up"
+                    data-aos-duration="1200" 
+                    className='bg-white shadow-md px-5 py-8 rounded-2xl group hover:border-2 hover:border-primary 
                     transition-transform hover:-translate-y-5 ease-in-out duration-400'>
                         <div className='transition hover:-translate-y-5 ease-in-out duration-400
                         group-hover:bg-primary group-hover:text-white p-5 bg-primary/10 text-primary 

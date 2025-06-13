@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -16,9 +16,21 @@ import { IoStar } from "react-icons/io5";
 import '../../App.css'
 import SectionHeading from '../../components/SectionHeading';
 
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Reviews = () => {
+
+  useEffect(() => {
+                AOS.init();
+              }, [])
+
+
   return (
-    <section className='bg-light-blue'>
+    <section className='bg-light-blue' id="reviews"
+    data-aos="fade-up"
+    data-aos-duration="1200">
       <div className='section-container '>
         {/* headding */}
         <SectionHeading title="Client Reviews" 

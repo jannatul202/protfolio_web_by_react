@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SectionHeading from '../../components/SectionHeading'
 import img1 from '../../assets/img1.avif'
 import img2 from '../../assets/img2.avif'
 import img3 from '../../assets/img3.avif'
 import img4 from '../../assets/img4.avif'
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Projects = () => {
+
+    useEffect(() => {
+              AOS.init();
+            }, [])
+
+
     const projects = [
             {image: img1},
             {image: img2},
@@ -20,7 +29,7 @@ const Projects = () => {
             {image: img4},
         ];
   return (
-    <section className='bg-light-blue/60'>
+    <section className='bg-light-blue/60' id="projects">
         <div className='section-container w-full mx-auto py-20 px-10'>
             {/* headding */}
             <SectionHeading title="My Projects" subtitle="Explore my latest work across different design categories" />
@@ -28,7 +37,11 @@ const Projects = () => {
             <div className='grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 mt-20 gap-6'>
                 {
                 projects.map((project , index)=>(
-                        <div key={index} className='overflow-hidden rounded-xl group relative'>
+                        <div 
+                        key={index} 
+                        data-aos="fade-up"
+                        data-aos-duration="1200"
+                        className='overflow-hidden rounded-xl group relative'>
                             <img src={project.image} alt="image"
                             className="w-full h-80 object-cover rounded-xl transform transition-transform 
                             duration-500 group-hover:scale-110" />

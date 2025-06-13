@@ -15,11 +15,11 @@ createRoot(document.getElementById('root')).render(
     <Routes>
       <Route element={<App/>}>
         <Route path="/" element={<Home/>} />
-        <Route path="/hero" element={<Hero/>} />
+        {/* <Route path="/hero" element={<Hero/>} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects/>} />
         <Route path="/reviews" element={<Reviews/>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/contact" element={<Contact/>} /> */}
       </Route>
     </Routes>
   </BrowserRouter>

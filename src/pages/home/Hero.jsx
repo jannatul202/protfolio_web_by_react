@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaBehance, FaFacebook, FaFigma, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { Link } from 'react-router'
 import heroBg from '../../assets/herobg.png'
@@ -8,9 +8,17 @@ import ps from '../../assets/ps.png'
 import behanse from '../../assets/behanse.svg'
 import ai from '../../assets/ai.png'
 import { motion } from "motion/react"
-import {floatingNameTagAnimation } from '../../utils/animations'
+import {fbgAnimation, floatingNameTagAnimation } from '../../utils/animations'
+import Squares from "../../components/Squers";
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Hero = () => {
+
+  useEffect(() => {
+          AOS.init();
+        }, [])
 
   const socialMedias =[
     {icon:<FaBehance />},
@@ -20,18 +28,27 @@ const Hero = () => {
   ]
   
   return (
-    <section className='bg-gray-50 pt-30 lg:pt-30 overflow-hidden relative'>
-      <motion.div
-            //initial={floatingNameTagAnimation.initial}
-            //animate={floatingNameTagAnimation.animate}
-            //transition={floatingNameTagAnimation.transition}
-       className="inset-0 bg-cover bg-no-repeat "
+    <section className='bg-gray-50 pt-30 lg:pt-30 overflow-hidden relative' id="home">
+       {/* background grid */}
+      <div className="absolute inset-0 z-0">
+        <Squares 
+          speed={0.1} 
+          squareSize={40} 
+          direction="diagonal" 
+          borderColor="#add8e6"  // light blue
+          hoverFillColor="transparent"  // no fill
+        />
+      </div>
+      <div
         //className="py-90 bg-none  absolute inset-0 bg-cover bg-no-repeat rotate-195 scale-x-[-1]"
         //style={{ backgroundImage: `url(${heroBg})`,transformOrigin: "center center" }}
-      ></motion.div>
+      ></div>
       <div className='mt-5 section-container flex md:flex-row lg:flex-row flex-col justify-between
       items-center'>
-        <div className='md:w-1/2 z-20'>
+        {/* left context */}
+        <div className='md:w-1/2 z-20'
+        data-aos="fade-up"
+        data-aos-duration="1200">
           <h1 className='md:text-6xl text-4xl text-primary font-bold md:mb-5 mb-2'>Jannatul Ferdoushi</h1>
           <h3 className='md:text-4xl text-3xl md:mb-5 mb-3 border-b-8 border-primary/20 inline-block pb-3 md:pb-5 font-semibold text-gray-400'>Creative Web Devoloper</h3>
           <p className='text-black text-[15px] md:text-[18px] tracking-wider'>I'm a Front-End Developer skilled in HTML, CSS, JavaScript, React,and Tailwind CSS. I enjoy building clean, responsive, and user-friendly interfaces that bring ideas to life on the web.</p>
@@ -65,10 +82,21 @@ const Hero = () => {
             to="/">View Work</Link>
           </div>
         </div>
-        <div className='md:w-1/3 z-20 my-20 md:ml-30 pt-5 relative'>
-            <img src={profile} 
-            alt="profile image" 
-            className='max-w-[200] rounded-4xl border-2 border-primary'/>
+        {/* right content */}
+        <div className='md:w-1/3 z-20 my-20 md:ml-30 pt-5 relative'
+        data-aos="fade-left"
+        data-aos-duration="1200">
+            <motion.div
+            initial={floatingNameTagAnimation.initial}
+            animate={floatingNameTagAnimation.animate}
+            transition={floatingNameTagAnimation.transition}
+            style={{
+              transformOrigin: "center center"
+            }}>
+              <img src={profile} 
+              alt="profile image" 
+              className='max-w-[200] rounded-4xl border-3 border-primary'/>
+            </motion.div>
             <motion.div 
             initial={floatingNameTagAnimation.initial}
             animate={floatingNameTagAnimation.animate}
@@ -80,9 +108,9 @@ const Hero = () => {
               <img src={figma} alt="figma image" className='h-8 w-8'/>
             </motion.div>
             <motion.div 
-            initial={floatingNameTagAnimation.initial}
-            animate={floatingNameTagAnimation.animate}
-            transition={floatingNameTagAnimation.transition}
+            initial={fbgAnimation.initial}
+            animate={fbgAnimation.animate}
+            transition={fbgAnimation.transition}
             style={{
               transformOrigin: "center center"
             }}
@@ -100,14 +128,14 @@ const Hero = () => {
               <img src={ai} alt="figma image" className='h-8 w-8'/>
             </motion.div>
             <motion.div 
-            initial={floatingNameTagAnimation.initial}
-            animate={floatingNameTagAnimation.animate}
-            transition={floatingNameTagAnimation.transition}
+            initial={fbgAnimation.initial}
+            animate={fbgAnimation.animate}
+            transition={fbgAnimation.transition}
             style={{
               transformOrigin: "center center"
             }}
             className='absolute  bg-white bottom-10 -right-15 text-white font-bold rounded-3xl p-2'>
-              <img src={behanse} alt="figma image" className='h-8 w-8'/>
+                <img src={behanse} alt="figma image" className='h-8 w-8'/>
             </motion.div>
         </div>
       </div> 

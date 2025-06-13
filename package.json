@@ -12,6 +12,7 @@
   "dependencies": {
     "@ramonak/react-progress-bar": "^5.4.0",
     "@tailwindcss/vite": "^4.1.7",
+    "aos": "^3.0.0-beta.6",
     "motion": "^12.16.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
